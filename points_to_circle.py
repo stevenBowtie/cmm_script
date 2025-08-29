@@ -22,6 +22,7 @@ print( "Radius: " + str( rs.CircleRadius( fitCirc ) ) )
 print( "Min: " + str( minimus ) )
 print( "Max: " + str( maximus ) )
 print( "Avg: " + str( average ) )
+print( pts )
 
 spread = maximus - minimus
 for pt in range( selPts.__len__() ):
