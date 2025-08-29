@@ -23,7 +23,9 @@ print( "Min: " + str( minimus ) )
 print( "Max: " + str( maximus ) )
 print( "Avg: " + str( average ) )
 print( pts )
-offset = int( 85 / selPts.__len__() )
-for pt in selPts:
-    rs.ObjectColor( pt, rs.ColorHLSToRGB( [ offset, 100, 255] ) )
-    offset += offset
+
+spread = maximus - minimus
+for pt in range( selPts.__len__() ):
+    h = int( (dist[pt] + abs( minimus ) ) / spread * 255 )
+    rs.ObjectColor( selPts[pt], rs.ColorHLSToRGB( [ h, 100, 255] ) )
+rs.UnselectAllObjects()
