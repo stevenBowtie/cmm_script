@@ -22,4 +22,8 @@ print( "Radius: " + str( rs.CircleRadius( fitCirc ) ) )
 print( "Min: " + str( minimus ) )
 print( "Max: " + str( maximus ) )
 print( "Avg: " + str( average ) )
-#print( pts )
+print( pts )
+offset = int( 85 / selPts.__len__() )
+for pt in selPts:
+    rs.ObjectColor( pt, rs.ColorHLSToRGB( [ offset, 100, 255] ) )
+    offset += offset
