@@ -27,8 +27,8 @@ print( pts )
 spread = maximus - minimus
 for pt in range( selPts.__len__() ):
     if( dist[pt] < 0 ):
-        h = 85 - int( dist[pt] / minimus  * 85 )
+        h = 85 - int( dist[pt] / minimus  * 170 )
     else:
-        h = 85 - int( dist[pt] / maximus * 85 )
+        h = 85 - int( dist[pt] / maximus * 170 )
     rs.ObjectColor( selPts[pt], rs.ColorHLSToRGB( [ h, 100, 255] ) )
 rs.UnselectAllObjects()
