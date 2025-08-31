@@ -23,6 +23,10 @@ print( "Diameter: " + str( rs.CircleRadius( fitCirc ) * 2 ) )
 print( "Min: " + str( minimus ) )
 print( "Max: " + str( maximus ) )
 print( "Avg: " + str( average ) )
+rs.SetUserText( fitCirc, "Diameter", str( rs.CircleRadius( fitCirc ) * 2 ) )
+rs.SetUserText( fitCirc, "Min", str( minimus ) )
+rs.SetUserText( fitCirc, "Max", str( maximus ) )
+rs.SetUserText( fitCirc, "Avg", str( average ) )
 
 for pt in range( selPts.__len__() ):
     if( dist[pt] < 0 ):
