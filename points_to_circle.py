@@ -15,7 +15,7 @@ avg = 0
 for pt in pts:
     ptDist = rs.Distance( centerPoint, pt )
     dist.append( ptDist - rad )
-    avg += ptDist - rad
+    avg += abs( ptDist - rad )
 minimus = min( dist )
 maximus = max( dist )
 average = avg / pts.__len__()
