@@ -1,4 +1,5 @@
 import rhinoscriptsyntax as rs
+import math
 selPts = rs.SelectedObjects()
 pts = []
 for pt in selPts:
@@ -22,7 +23,11 @@ average = avg / deviations.__len__()
 print( "Min: " + str( minimus ) )
 print( "Max: " + str( maximus ) )
 print( "Avg: " + str( average ) )
-#print( "Std Dev: " + str( stats.stdev( deviations ) ) )
+dev_squared = []
+for dev in deviations:
+    dev_squared.append( dev ** 2 )
+std_dev = math.sqrt( sum( dev_squared ) )
+print( "Std Dev: " + str( std_dev ) )
 
 rs.SetUserText( pln, "Min", str( minimus ) )
 rs.SetUserText( pln, "Max", str( maximus ) )
