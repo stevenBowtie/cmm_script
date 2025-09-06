@@ -14,13 +14,19 @@ for pt in pts:
     dev = rs.Distance( pt, p3d )
     deviations.append( dev )
     avg += dev
-print( deviations )
+
 minimus = min( deviations )
 maximus = max( deviations )
 average = avg / deviations.__len__()
+
 print( "Min: " + str( minimus ) )
 print( "Max: " + str( maximus ) )
 print( "Avg: " + str( average ) )
+#print( "Std Dev: " + str( stats.stdev( deviations ) ) )
+
+rs.SetUserText( pln, "Min", str( minimus ) )
+rs.SetUserText( pln, "Max", str( maximus ) )
+rs.SetUserText( pln, "Avg", str( average ) )
 
 for pt in range( pts.__len__() ):
     if( deviations[pt] < 0 ):
